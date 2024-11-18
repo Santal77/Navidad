@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Cena de Navidad</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://img.freepik.com/vector-gratis/fondo-navidad-ramas-pino-adornos-colgantes_1048-11258.jpg?semt=ais_hybrid');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d32f2f;
+        }
+
+        .header-image {
+            width: 50%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .message {
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #d32f2f;
+        }
+
+        .responsive-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .message {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Snow effect */
+        .snow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="snow"></div>
+    <div class="container">
+        <h1>¡Invitación a la Cena de Navidad!</h1>
+        <img src="https://img.freepik.com/vector-premium/adornos-navidenos-banner-forma-corazon-cinta-dorada_276825-63.jpg" align="center"		class="responsive-image">
+        <div class="message">
+            <p>Hola a tod@s.</p>
+            <p>Como ya sabéis, queremos que vengáis a cenar a casa para poder celebrar unas nuevas navidades con nosotros. Tenemos pensado preparar algunos platos, pero el número de comensales se nos ha ido un poco de las manos y necesitamos que nos echéis una mano.</p>
+            <p>Queremos proponeros que traigáis alguna cosilla para comer y/o beber y lo compartamos todo en la mesa.</p>
+            <p><strong>Fecha:</strong> 5/12/2024</p>
+            <p><strong>Hora:</strong> 21:00</p>
+            <p>Después de la cena, nos encantaría trasladarnos hasta la discoteca Azúcar y apuntarnos a sus Bachatas Night.</p>
+            <p>Os esperamos.</p>
+            <p>Os dejamos un <a href="https://example.com/excel" target="_blank">enlace al Excel</a> para que podáis ir diciendo qué vais a traer.</p>
+        </div>
+        <div class="footer">
+            <p>Con cariño, Carlos y Paula</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const snowContainer = document.querySelector('.snow');
+            for (let i = 0; i < 100; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                snowflake.style.left = Math.random() * window.innerWidth + 'px';
+                snowflake.style.animationDuration = 2 + Math.random() * 3 + 's';
+                snowflake.style.width = snowflake.style.height = 5 + Math.random() * 10 + 'px';
+                snowContainer.appendChild(snowflake);
+            }
+        });
+    </script>
+</body>
+</html>
