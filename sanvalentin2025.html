@@ -68,7 +68,12 @@
     </style>
 </head>
 <body>
-    <h1>Feliz San Valentín, mi amor</h1>
+    <h1>Feliz San Valentín, mi amor. (Pincha en el audio)</h1>
+
+     <audio controls autoplay loop>
+        <source src="./salsa.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
    <br/> 
     <h4>Este año he querido escribirte una canción, es una bachata, para intentar acercarme a las palabras que te mereces oír. Espero que puedan hacerte un poquito feliz. Te quiero mi vida, espero que te guste.</h4>
     <br/>
@@ -111,10 +116,7 @@
     <p>Eres mi todo, mi fuego y mi paz, mi sueño eterno, mi realidad.<br>
     En cada paso, en cada compás, pegado a ti no quiero dejar de bailar.</p>
     
-    <audio controls autoplay loop>
-        <source src="./salsa.mp3" type="audio/mpeg">
-        Tu navegador no soporta el elemento de audio.
-    </audio>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const audio = document.querySelector('audio');
