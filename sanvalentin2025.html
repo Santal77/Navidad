@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz San Valentín</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #ff758c, #ff7eb3);
+            text-align: left;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            padding: 20px;
+            position: relative;
+            overflow: auto;
+            max-height: 100vh;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        h1, h2, h3, h4, p {
+            max-width: 90%;
+            margin: auto;
+        }
+        audio {
+            width: 100%;
+            max-width: 300px;
+        }}
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+        p {
+            font-size: 1em;
+            margin: 20px auto;
+            max-width: 600px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            transform: rotate(-45deg);
+            animation: float 4s infinite ease-in-out;
+        }
+        .heart:before, .heart:after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .heart:before {
+            top: -10px;
+            left: 0;
+        }
+        .heart:after {
+            left: 10px;
+            top: 0;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(-45deg); opacity: 1; }
+            50% { transform: translateY(-50px) rotate(-45deg); opacity: 0.7; }
+            100% { transform: translateY(-100px) rotate(-45deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Feliz San Valentín, mi amor</h1>
+   <br/> 
+    <h4>Este año he querido escribirte una canción, es una bachata, para intentar acercarme a las palabras que te mereces oír. Espero que puedan hacerte un poquito feliz. Te quiero mi vida, espero que te guste.</h4>
+    <br/>
+	<br/>
+    <h3><p>Me Bailas</p></h3>
+    
+    <h4><p>Verso 1:</p></h4>
+    <p>Cuando te veo, entras radiante, todos te miran,<br>
+    mi latido tilda tu nombre tú ladina me buscas.<br>
+    Tu mirada me quema, tu piel me está llamando,<br>
+    revivo tu caótico sabor y pierdo el control.</p>
+    
+    <p>Al extender mi mano te prende un escalofrío,<br>
+    tu cuerpo tiembla y mi pecho arde de estío,<br>
+    Aceptas, el mundo se apaga al rozar tu piel.<br>
+    Eres mi calma, mi hogar, mi deseo, mi amanecer.</p>
+    
+    <h4><p>Estribillo:</p></h4>
+    <p>Tú me incitas, me provocas, cada curva me enloquece.<br>
+    Quiero hacerte mía, poseerte mientras te ofreces.<br>
+    Bailar contigo es mi destino, tu suspiro mi canción.<br>
+    No me falta nada si estás conmigo, mi amor, mi pasión.</p>
+    
+    <h4><p>Verso 2:</p></h4>
+    <p>Tus labios me tientan, por tus curvas me deslizo,<br>
+    tu calor me envuelve, me permite volar.<br>
+    En tus brazos encuentro lo que soñé,<br>
+    te protegeré, por la noche te quiero velar.</p>
+    
+    <p>Bailando contigo pierdo la razón,<br>
+    tu cintura me llama, me pide más.<br>
+    Eres mi dueña, mi adicción,<br>
+    mi sueño hecho realidad.</p>
+    
+    <h4><p>Puente:</p></h4>
+    <p>Eres mi calma y mi tormenta, mi anhelo y mi protección.<br>
+    Cuando me miras, mi alma tiembla, y sólo existimos nosotros dos.</p>
+    
+    <h4><p>Outro:</p></h4>
+    <p>Eres mi todo, mi fuego y mi paz, mi sueño eterno, mi realidad.<br>
+    En cada paso, en cada compás, pegado a ti no quiero dejar de bailar.</p>
+    
+    <audio controls autoplay loop>
+        <source src="./salsa.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.querySelector('audio');
+            audio.play().catch(error => {
+                console.log('Reproducción automática bloqueada, esperando interacción del usuario.');
+            });
+        });
+    </script>
+    
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.top = window.innerHeight + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 4000);
+        }
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>
